@@ -3,7 +3,7 @@ attack_technique: T1002
 display_name: Data Compressed
 
 atomic_tests:
-- name: Compress Data for Exfiltration With PowerShell
+- name: Compress Data for Exfiltration With PowerShell-Custom
   description: |
     An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration.
     When the test completes you should find the files from the $env:USERPROFILE directory compressed in a file called T1002-data-ps.zip in the $env:USERPROFILE directory 
