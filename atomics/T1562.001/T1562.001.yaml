@@ -16,11 +16,7 @@ atomic_tests:
       type: string
       default: mpssvc
 
-  dependencies:
-      - description: |
-          Service must exist (Service: #{service_name})
-        prereq_command: |
-          sc query #{service_name}
+
 
   executor:
     name: command_prompt
