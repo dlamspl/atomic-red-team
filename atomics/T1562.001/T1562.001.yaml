@@ -14,7 +14,7 @@ atomic_tests:
     service_name:
       description: Service name to stop
       type: string
-      default: mpssvc
+      default: windefend
 
 
 
