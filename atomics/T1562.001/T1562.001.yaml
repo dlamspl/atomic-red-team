@@ -1,0 +1,32 @@
+---
+attack_technique: T1562.001
+display_name: Defense Evasion
+
+atomic_tests:
+- name: Stop a windows security service
+  description: |
+    Stops windows firewall service with sc.exe
+
+  supported_platforms:
+    - windows
+
+  input_arguments:
+    service_name:
+      description: Service name to stop
+      type: string
+      default: mpssvc
+
+  dependencies:
+      - description: |
+          Service must exist (Service: #{service_name})
+        prereq_command: |
+          sc query #{service_name}
+
+  executor:
+    name: command_prompt
+    elevation_required: true
+    command: |
+      sc.exe stop #{service_name}
+    cleanup_command: |
+      sc.exe stop #{service_name}
+
